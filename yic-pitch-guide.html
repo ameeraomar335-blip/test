@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pitch Like a Pro — YIC 2026 Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #00A896;
+    --teal-light: #E0F7F5;
+    --teal-dark: #006D63;
+    --amber: #F4A323;
+    --amber-light: #FEF3DC;
+    --coral: #E55934;
+    --coral-light: #FDE8E3;
+    --navy: #0D1B2A;
+    --slate: #3D5166;
+    --mist: #F4F6F8;
+    --white: #FFFFFF;
+    --border: #E2E8F0;
+    --text: #1A2532;
+    --muted: #6B7C8D;
+    --radius: 12px;
+    --shadow: 0 2px 16px rgba(0,0,0,0.07);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--mist);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.25; }
+
+  /* NAV */
+  .nav {
+    background: var(--navy);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+    height: 60px;
+  }
+  .nav-logo { color: white; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
+  .nav-logo span { color: var(--teal); }
+  .nav-pills { display: flex; gap: 4px; }
+  .nav-pill {
+    background: transparent; border: none; color: rgba(255,255,255,0.6);
+    font-size: 0.8rem; padding: 6px 12px; border-radius: 6px; cursor: pointer;
+    font-family: 'Inter', sans-serif; transition: all 0.15s;
+  }
+  .nav-pill:hover { background: rgba(255,255,255,0.1); color: white; }
+  .nav-pill.active { background: var(--teal); color: white; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
+    padding: 5rem 2rem 4rem;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300A896' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,168,150,0.2); border: 1px solid rgba(0,168,150,0.4);
+    color: #5EE7DC; font-size: 0.8rem; padding: 6px 14px; border-radius: 20px;
+    margin-bottom: 1.5rem; font-weight: 500; letter-spacing: 0.04em;
+  }
+  .hero h1 {
+    color: white; font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.03em;
+  }
+  .hero h1 em { color: var(--teal); font-style: normal; }
+  .hero p { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 560px; margin: 0 auto 2.5rem; }
+  .rubric-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .rubric-pill {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    color: white; border-radius: 8px; padding: 10px 18px; font-size: 0.85rem;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .rubric-pill strong { display: block; font-size: 1.4rem; color: var(--teal); }
+
+  /* CONTAINER */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* SECTION */
+  .section { padding: 3.5rem 0; }
+  .section-label {
+    display: inline-block; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal);
+    margin-bottom: 0.5rem;
+  }
+  .section h2 { font-size: 1.7rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+  .section .subtitle { color: var(--muted); margin-bottom: 2rem; }
+
+  /* PITCH STEPS */
+  .steps-nav {
+    display: flex; gap: 0; border-radius: var(--radius);
+    overflow: hidden; border: 1px solid var(--border);
+    background: white; margin-bottom: 1.5rem;
+  }
+  .step-tab {
+    flex: 1; border: none; background: transparent; padding: 14px 8px;
+    cursor: pointer; font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem; font-weight: 500; color: var(--muted);
+    border-right: 1px solid var(--border); transition: all 0.15s;
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+  }
+  .step-tab:last-child { border-right: none; }
+  .step-tab .step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--mist); display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.8rem; transition: all 0.15s;
+  }
+  .step-tab.active { background: var(--teal-light); color: var(--teal-dark); }
+  .step-tab.active .step-num { background: var(--teal); color: white; }
+  .step-tab:hover:not(.active) { background: var(--mist); }
+
+  .step-panel { display: none; }
+  .step-panel.active { display: block; }
+
+  .step-card {
+    background: white; border-radius: var(--radius);
+    border: 1px solid var(--border); overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .step-card-header {
+    padding: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .step-icon {
+    width: 52px; height: 52px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; flex-shrink: 0;
+  }
+  .step-card-header h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; }
+  .step-card-header p { color: var(--muted); font-size: 0.9rem; }
+  .step-card-body { padding: 1.5rem; }
+
+  .rubric-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .rtag {
+    font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px;
+    font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.02em;
+  }
+  .rtag-ps { background: #EDF4FF; color: #1D5FB8; }
+  .rtag-tech { background: #F0FFF4; color: #1A6B3A; }
+  .rtag-ref { background: #FFF5EA; color: #9A4E0D; }
+
+  .tip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1.25rem; }
+  @media (max-width: 600px) { .tip-grid { grid-template-columns: 1fr; } }
+
+  .tip-box {
+    border-radius: 10px; padding: 1rem 1.1rem;
+    border: 1px solid transparent;
+  }
+  .tip-box.good { background: #F0FFF4; border-color: #C3E6CB; }
+  .tip-box.weak { background: #FFF5F5; border-color: #F5C6CB; }
+  .tip-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+  .tip-box.good .tip-label { color: #1A6B3A; }
+  .tip-box.weak .tip-label { color: #9B1C1C; }
+  .tip-box p { font-size: 0.88rem; line-height: 1.55; color: var(--text); }
+  .tip-box.weak p { color: var(--muted); text-decoration: none; }
+
+  .question-list { list-style: none; margin-top: 1.1rem; }
+  .question-list li {
+    padding: 9px 0; border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem;
+  }
+  .question-list li:last-child { border-bottom: none; }
+  .question-list li::before {
+    content: '→'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+  }
+
+  .duration-bar {
+    display: flex; align-items: center; gap: 12px; margin-top: 1.25rem;
+    background: var(--mist); border-radius: 8px; padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+  .duration-bar .clock { color: var(--teal); font-size: 1rem; }
+  .d-time { font-weight: 700; font-family: 'Space Grotesk', sans-serif; color: var(--navy); }
+
+  /* RUBRIC SECTION */
+  .rubric-grid { display: grid; gap: 1rem; }
+  .rubric-group {
+    background: white; border-radius: var(--radius);
+    border: 1px solid var(--border); overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .rubric-group-header {
+    padding: 1rem 1.25rem; display: flex; align-items: center; gap: 12px;
+  }
+  .rg-pct {
+    font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700;
+    min-width: 52px;
+  }
+  .rg-ps .rg-pct { color: #1D5FB8; }
+  .rg-tech .rg-pct { color: #1A6B3A; }
+  .rg-ref .rg-pct { color: #9A4E0D; }
+  .rg-name { font-weight: 600; font-size: 1rem; }
+  .rg-sub { font-size: 0.82rem; color: var(--muted); }
+  .rubric-items { border-top: 1px solid var(--border); }
+  .rubric-item {
+    display: flex; align-items: center; padding: 10px 1.25rem;
+    border-bottom: 1px solid var(--border); font-size: 0.88rem;
+  }
+  .rubric-item:last-child { border-bottom: none; }
+  .ri-name { flex: 1; }
+  .ri-bar-wrap { width: 130px; background: var(--mist); border-radius: 4px; height: 8px; margin: 0 12px; }
+  .ri-bar { height: 8px; border-radius: 4px; }
+  .rg-ps .ri-bar { background: #4A90D9; }
+  .rg-tech .ri-bar { background: #2ECC71; }
+  .rg-ref .ri-bar { background: #F4A323; }
+  .ri-pct { font-weight: 600; font-size: 0.82rem; font-family: 'Space Grotesk', sans-serif; min-width: 30px; text-align: right; }
+
+  /* PITCH BUILDER */
+  .builder-card {
+    background: white; border-radius: var(--radius);
+    border: 1px solid var(--border); box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .builder-header {
+    background: var(--navy); padding: 1.25rem 1.5rem;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .builder-header h3 { color: white; font-size: 1rem; font-weight: 600; }
+  .builder-header p { color: rgba(255,255,255,0.6); font-size: 0.82rem; }
+  .builder-body { padding: 1.5rem; display: grid; gap: 1rem; }
+  .field-group { display: flex; flex-direction: column; gap: 6px; }
+  .field-group label {
+    font-size: 0.8rem; font-weight: 600; color: var(--slate);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .field-group label span { color: var(--teal); font-weight: 400; font-family: 'Inter', sans-serif; font-size: 0.75rem; }
+  .field-group textarea, .field-group input {
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 10px 12px; font-size: 0.88rem; font-family: 'Inter', sans-serif;
+    color: var(--text); resize: vertical; background: var(--mist);
+    transition: border-color 0.15s; outline: none;
+  }
+  .field-group textarea:focus, .field-group input:focus {
+    border-color: var(--teal); background: white;
+  }
+  .generate-btn {
+    background: var(--teal); color: white; border: none;
+    padding: 12px 24px; border-radius: 8px; font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem;
+    cursor: pointer; width: 100%; margin-top: 0.5rem;
+    transition: all 0.15s;
+  }
+  .generate-btn:hover { background: var(--teal-dark); }
+  .output-area {
+    background: var(--mist); border: 1px dashed var(--border);
+    border-radius: 8px; padding: 1.25rem; margin-top: 1rem;
+    font-size: 0.9rem; line-height: 1.75; display: none;
+    white-space: pre-wrap; color: var(--text);
+  }
+  .output-area.visible { display: block; }
+  .output-area strong { color: var(--teal-dark); }
+  .copy-btn {
+    display: flex; align-items: center; gap: 6px;
+    background: white; border: 1px solid var(--border);
+    padding: 8px 14px; border-radius: 6px; cursor: pointer;
+    font-size: 0.8rem; font-weight: 500; color: var(--muted);
+    margin-top: 8px; transition: all 0.15s; width: fit-content;
+  }
+  .copy-btn:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* CHECKLIST */
+  .checklist-grid { display: grid; gap: 1rem; }
+  .check-group {
+    background: white; border-radius: var(--radius);
+    border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow);
+  }
+  .check-group-title {
+    padding: 12px 1.25rem; font-size: 0.82rem; font-weight: 700;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .check-group-title.ps { background: #EDF4FF; color: #1D5FB8; }
+  .check-group-title.tech { background: #F0FFF4; color: #1A6B3A; }
+  .check-group-title.ref { background: #FFF5EA; color: #9A4E0D; }
+  .check-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 11px 1.25rem; border-top: 1px solid var(--border); cursor: pointer;
+    transition: background 0.1s;
+  }
+  .check-item:hover { background: var(--mist); }
+  .check-item input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--teal); flex-shrink: 0; margin-top: 2px; cursor: pointer; }
+  .check-item label { font-size: 0.88rem; cursor: pointer; line-height: 1.5; }
+  .check-item.checked label { text-decoration: line-through; color: var(--muted); }
+
+  /* SCORE TRACKER */
+  .score-bar-wrap {
+    background: white; border-radius: var(--radius);
+    border: 1px solid var(--border); padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem; box-shadow: var(--shadow);
+    position: sticky; top: 68px; z-index: 50;
+  }
+  .score-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .score-label { font-size: 0.82rem; font-weight: 600; color: var(--muted); font-family: 'Space Grotesk', sans-serif; }
+  .score-num { font-size: 1.1rem; font-weight: 700; color: var(--teal); font-family: 'Space Grotesk', sans-serif; }
+  .score-track { background: var(--mist); border-radius: 6px; height: 10px; overflow: hidden; }
+  .score-fill { height: 10px; border-radius: 6px; background: var(--teal); transition: width 0.4s ease; width: 0%; }
+  .score-msg { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+
+  /* TIPS */
+  .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 600px) { .tips-grid { grid-template-columns: 1fr; } }
+  .tip-card {
+    background: white; border-radius: var(--radius);
+    border: 1px solid var(--border); padding: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  .tip-card-icon { font-size: 1.5rem; margin-bottom: 8px; }
+  .tip-card h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 6px; }
+  .tip-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.55; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy); color: rgba(255,255,255,0.5); text-align: center;
+    padding: 2rem; font-size: 0.8rem;
+  }
+  .footer a { color: var(--teal); text-decoration: none; }
+
+  /* PROGRESS DOTS */
+  .progress-dots {
+    display: flex; gap: 8px; justify-content: center; margin-top: 1.5rem;
+  }
+  .pdot {
+    width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.25);
+    cursor: pointer; transition: all 0.15s;
+  }
+  .pdot.active { background: var(--teal); transform: scale(1.3); }
+
+  .highlight-box {
+    background: var(--teal-light); border-left: 3px solid var(--teal);
+    border-radius: 0 8px 8px 0; padding: 10px 14px;
+    font-size: 0.88rem; margin-top: 1rem; color: var(--teal-dark);
+  }
+  .highlight-box strong { font-weight: 700; }
+
+  @media (max-width: 600px) {
+    .nav-pills { display: none; }
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .step-tab { font-size: 0.68rem; padding: 10px 4px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">YIC <span>Pitch</span> Guide</div>
+  <div class="nav-pills">
+    <button class="nav-pill active" onclick="scrollTo('#framework')">Framework</button>
+    <button class="nav-pill" onclick="scrollTo('#rubric')">Rubric</button>
+    <button class="nav-pill" onclick="scrollTo('#builder')">Builder</button>
+    <button class="nav-pill" onclick="scrollTo('#checklist')">Checklist</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-badge">🇲🇾 YIC 2026 · AI for Social Good</div>
+  <h1>Win your <em>YIC pitch</em>.<br>Here's exactly how.</h1>
+  <p>A step-by-step guide to crafting a pitch that scores high across all three rubric areas — built around what judges actually want to see.</p>
+  <div class="rubric-pills">
+    <div class="rubric-pill"><strong>40%</strong> Problem Solving</div>
+    <div class="rubric-pill"><strong>30%</strong> Technical</div>
+    <div class="rubric-pill"><strong>30%</strong> Reflection</div>
+  </div>
+  <div class="progress-dots">
+    <div class="pdot active"></div>
+    <div class="pdot"></div>
+    <div class="pdot"></div>
+    <div class="pdot"></div>
+    <div class="pdot"></div>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<div id="framework" style="padding-top: 1rem;"></div>
+<div class="container">
+  <div class="section">
+    <span class="section-label">The Pitch Framework</span>
+    <h2>5 parts. ~5 minutes. Maximum impact.</h2>
+    <p class="subtitle">Every winning YIC pitch follows this structure. Click each part to see how to nail it.</p>
+
+    <div class="steps-nav" id="stepNav">
+      <button class="step-tab active" onclick="switchStep(0)" id="tab-0">
+        <div class="step-num">1</div>Hook
+      </button>
+      <button class="step-tab" onclick="switchStep(1)" id="tab-1">
+        <div class="step-num">2</div>Problem
+      </button>
+      <button class="step-tab" onclick="switchStep(2)" id="tab-2">
+        <div class="step-num">3</div>Data
+      </button>
+      <button class="step-tab" onclick="switchStep(3)" id="tab-3">
+        <div class="step-num">4</div>AI Solution
+      </button>
+      <button class="step-tab" onclick="switchStep(4)" id="tab-4">
+        <div class="step-num">5</div>Reflect
+      </button>
+    </div>
+
+    <!-- PANEL 0: Hook -->
+    <div class="step-panel active" id="panel-0">
+      <div class="step-card">
+        <div class="step-card-header">
+          <div class="step-icon" style="background:#E0F7F5;">🎯</div>
+          <div>
+            <h3>Part 1 — The Hook (first 30 seconds)</h3>
+            <p>Open with something real. A story. A statistic. A question that makes the judge stop and listen.</p>
+            <div class="rubric-tags">
+              <span class="rtag rtag-ps">Presentation 10%</span>
+              <span class="rtag rtag-ps">Problem Statement 15%</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card-body">
+          <div class="duration-bar">
+            <span class="clock">⏱</span>
+            <span>Aim for <span class="d-time">30 – 45 seconds</span></span>
+          </div>
+          <div class="tip-grid">
+            <div class="tip-box good">
+              <div class="tip-label">✓ Strong hook</div>
+              <p>"Last year, 3 farmers in our village lost their entire harvest because sun bears entered their fields at night — and no one knew until morning. We decided to change that."</p>
+            </div>
+            <div class="tip-box weak">
+              <div class="tip-label">✗ Weak hook</div>
+              <p>"Hello judges. Our project is about sun bears. We chose this because we thought it was interesting and also related to the environment."</p>
+            </div>
+          </div>
+          <div class="highlight-box"><strong>Pro tip:</strong> Start with a real person, a real moment, or a real number — not a dictionary definition. Judges hear hundreds of "our project is about..." openings.</div>
+          <ul class="question-list">
+            <li>Can you name one specific person or community who suffers from this problem?</li>
+            <li>What's the most dramatic or surprising fact you found in your research?</li>
+            <li>Can you paint a scene in under two sentences that makes the judge feel the problem?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 1: Problem -->
+    <div class="step-panel" id="panel-1">
+      <div class="step-card">
+        <div class="step-card-header">
+          <div class="step-icon" style="background:#EDF4FF;">🔍</div>
+          <div>
+            <h3>Part 2 — The Problem (deep dive)</h3>
+            <p>Show the judge you truly understand who is suffering, why it matters, and that you did real community research — not just Googled it.</p>
+            <div class="rubric-tags">
+              <span class="rtag rtag-ps">Problem Statement 15%</span>
+              <span class="rtag rtag-ps">Effectiveness 10%</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card-body">
+          <div class="duration-bar">
+            <span class="clock">⏱</span>
+            <span>Aim for <span class="d-time">45 – 60 seconds</span></span>
+          </div>
+          <div class="tip-grid">
+            <div class="tip-box good">
+              <div class="tip-label">✓ Strong problem</div>
+              <p>"We surveyed 12 farmers in Sabah. 9 of them said they had lost income due to sun bear raids. The problem: no affordable early-warning system exists. Existing solutions cost over RM5,000 — far beyond what rural farmers can afford."</p>
+            </div>
+            <div class="tip-box weak">
+              <div class="tip-label">✗ Weak problem</div>
+              <p>"Sun bears are endangered. This is bad for the environment. People need to care more about nature. We want to help protect them."</p>
+            </div>
+          </div>
+          <div class="highlight-box"><strong>The 3-part problem formula:</strong> Who is affected? → What specifically goes wrong? → Why does nothing currently fix it?</div>
+          <ul class="question-list">
+            <li>Did you talk to or survey real people from this community? Mention it.</li>
+            <li>Can you quantify the problem — numbers, frequency, cost, people affected?</li>
+            <li>What's the specific gap that your solution fills that others don't?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 2: Data -->
+    <div class="step-panel" id="panel-2">
+      <div class="step-card">
+        <div class="step-card-header">
+          <div class="step-icon" style="background:#F0FFF4;">📊</div>
+          <div>
+            <h3>Part 3 — Your Data Story</h3>
+            <p>This is worth 15% alone. Show how you collected real data, what it means, and how it trained your AI model. This proves your science is legitimate.</p>
+            <div class="rubric-tags">
+              <span class="rtag rtag-ps">Data Strategy 15%</span>
+              <span class="rtag rtag-tech">Coding 5%</span>
+              <span class="rtag rtag-tech">Innovation 10%</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card-body">
+          <div class="duration-bar">
+            <span class="clock">⏱</span>
+            <span>Aim for <span class="d-time">60 – 90 seconds</span></span>
+          </div>
+          <div class="tip-grid">
+            <div class="tip-box good">
+              <div class="tip-label">✓ Strong data story</div>
+              <p>"We collected 320 images of sun bear footprints using camera traps over 3 weeks. We cleaned out blurry images, labelled each one, then trained a TFLite model using Teachable Machine. Our test accuracy was 87%."</p>
+            </div>
+            <div class="tip-box weak">
+              <div class="tip-label">✗ Weak data story</div>
+              <p>"We used Teachable Machine. We uploaded pictures from the internet and trained it. The AI can now recognise sun bears."</p>
+            </div>
+          </div>
+          <div class="highlight-box"><strong>Cover all 4 data Ds:</strong> Discover (where you got data) → Describe (what it contains) → Deduce (what you cleaned/processed) → Deploy (how it trained the model)</div>
+          <ul class="question-list">
+            <li>Did you collect your own data, or responsibly source it? Explain which and why.</li>
+            <li>How many data samples? What was your train/test split?</li>
+            <li>Did you face any data challenges (imbalance, noise, limited samples)? What did you do?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 3: AI Solution -->
+    <div class="step-panel" id="panel-3">
+      <div class="step-card">
+        <div class="step-card-header">
+          <div class="step-icon" style="background:#FFF5EA;">🤖</div>
+          <div>
+            <h3>Part 4 — Your AI Solution</h3>
+            <p>Show the prototype working. Explain how the Edge AI runs on your hardware. Convince judges this actually solves the problem.</p>
+            <div class="rubric-tags">
+              <span class="rtag rtag-tech">Functionality 10%</span>
+              <span class="rtag rtag-tech">Feasibility 5%</span>
+              <span class="rtag rtag-tech">Innovation 10%</span>
+              <span class="rtag rtag-ps">Effectiveness 10%</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card-body">
+          <div class="duration-bar">
+            <span class="clock">⏱</span>
+            <span>Aim for <span class="d-time">75 – 90 seconds</span></span>
+          </div>
+          <div class="tip-grid">
+            <div class="tip-box good">
+              <div class="tip-label">✓ Strong tech pitch</div>
+              <p>"Our ESP32-based device runs our TFLite model offline — no internet needed. When it detects a sun bear signature in heat sensor data, it sends an alert via LoRa to the farmer's basic phone within 2 seconds."</p>
+            </div>
+            <div class="tip-box weak">
+              <div class="tip-label">✗ Weak tech pitch</div>
+              <p>"We made an app that uses AI. When the AI detects something, it sends a notification. It's made using Python and also connects to the internet."</p>
+            </div>
+          </div>
+          <div class="highlight-box"><strong>Live demo beats everything.</strong> If your prototype works, show it running — even a short 30-second live demo scores higher than any slide.</div>
+          <ul class="question-list">
+            <li>What hardware/software does your Edge AI run on? Say it by name (ESP32, Raspberry Pi, Android, etc.).</li>
+            <li>What happens if there's no internet? Does your solution still work?</li>
+            <li>What makes your approach different from something that already exists?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 4: Reflect -->
+    <div class="step-panel" id="panel-4">
+      <div class="step-card">
+        <div class="step-card-header">
+          <div class="step-icon" style="background:#FEF3DC;">✨</div>
+          <div>
+            <h3>Part 5 — Reflect, Impact & Future</h3>
+            <p>This section is 30% of your score. Don't rush it. Judges want to see how you think, what you learned, and where this is going.</p>
+            <div class="rubric-tags">
+              <span class="rtag rtag-ref">Learning 10%</span>
+              <span class="rtag rtag-ref">Teamwork 5%</span>
+              <span class="rtag rtag-ref">Future Thinking 5%</span>
+              <span class="rtag rtag-ps">Effectiveness 10%</span>
+            </div>
+          </div>
+        </div>
+        <div class="step-card-body">
+          <div class="duration-bar">
+            <span class="clock">⏱</span>
+            <span>Aim for <span class="d-time">60 – 75 seconds</span></span>
+          </div>
+          <div class="tip-grid">
+            <div class="tip-box good">
+              <div class="tip-label">✓ Strong reflection</div>
+              <p>"We failed our first model — only 52% accuracy. That taught us to diversify our data angles. Aina handled ML training, Haziq did hardware, I handled community interviews. Our biggest learning: talk to users early, not just at the end."</p>
+            </div>
+            <div class="tip-box weak">
+              <div class="tip-label">✗ Weak reflection</div>
+              <p>"We worked well together as a team. We learned a lot about AI. In future, we would improve our project by making it better and adding more features."</p>
+            </div>
+          </div>
+          <div class="highlight-box"><strong>Real > perfect.</strong> Sharing a genuine failure and what you learned from it scores higher than pretending everything went smoothly. Judges respect honesty.</div>
+          <ul class="question-list">
+            <li>What was one specific thing that didn't work, and what did you do about it?</li>
+            <li>What is each team member's name and role? Mention all three.</li>
+            <li>If you had 6 more months, what would you add or change?</li>
+            <li>Who in the real world will use this, and how will their life improve?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RUBRIC -->
+  <div id="rubric"></div>
+  <div class="section">
+    <span class="section-label">The Scoring Rubric</span>
+    <h2>Know exactly what's worth what.</h2>
+    <p class="subtitle">YIC 2026 judges score on three areas. Here's how to optimise every percentage point.</p>
+
+    <div class="rubric-grid">
+      <!-- Problem Solving -->
+      <div class="rubric-group rg-ps">
+        <div class="rubric-group-header">
+          <div>
+            <div class="rg-pct">40%</div>
+            <div class="rg-name">Problem Solving</div>
+            <div class="rg-sub">The biggest category — your research and community impact matter most</div>
+          </div>
+        </div>
+        <div class="rubric-items">
+          <div class="rubric-item">
+            <span class="ri-name">Problem Statement — who suffers and why</span>
+            <div class="ri-bar-wrap"><div class="ri-bar" style="width:100%"></div></div>
+            <span class="ri-pct">15%</span>
+          </div>
+          <div class="rubric-item">
+            <span class="ri-name">Data Strategy — how you collected and used data</span>
+            <div class="ri-bar-wrap"><div class="ri-bar" style="width:100%"></div></div>
+            <span class="ri-pct">15%</span>
+          </div>
+          <div class="rubric-item">
+            <span class="ri-name">Effectiveness — does it actually help the community?</span>
+            <div class="ri-bar-wrap"><div class="ri-bar" style="width:67%"></div></div>
+            <span class="ri-pct">10%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical -->
+      <div class="rubric-group rg-tech">
+        <div class="rubric-group-header">
+          <div>
+            <div class="rg-pct">30%</div>
+            <div class="rg-name">Technical</div>
+            <div class="rg-sub">Your AI model, hardware, code quality and how creative your solution is</div>
+          </div>
+        </div>
+        <div class="rubric-items">
+          <div class="rubric-item">
+            <span class="ri-name">Innovation — is it a creative approach?</span>
+            <div class="ri-bar-wrap"><div class="ri-bar" style="width:100%"></div></div>
+            <span class="ri-pct">10%</span>
+          </div>
+          <div class="rubric-item">
+            <span class="ri-name">Functionality — does the prototype actually work?</span>
+            <div class="ri-bar-wrap"><div class="ri-bar" style="width:100%"></div></div>
+            <span class="ri-pct">10%</span>
+          </div>
+          <div class="rubric-item">
+            <span class="ri-name">Feasibility — could this be scaled up?</span>
+            <div class="ri-bar-wrap"><div class="ri-bar" style="width:50%"></div></div>
+            <span class="ri-pct">5%</span>
+          </div>
+          <div class="rubric-item">
+            <span class="ri-name">Coding — quality and clarity of code</span>
+            <div class="ri-bar-wrap"><div class="ri-bar" style="width:50%"></div></div>
+            <span class="ri-pct">5%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reflection -->
+      <div class="rubric-group rg-ref">
+        <div class="rubric-group-header">
+          <div>
+            <div class="rg-pct">30%</div>
+            <div class="rg-name">Reflection</div>
+            <div class="rg-sub">How well you present, what you learned, and your vision for the future</div>
+          </div>
+        </div>
+        <div class="rubric-items">
+          <div class="rubric-item">
+            <span class="ri-name">Presentation — clarity, confidence, delivery</span>
+            <div class="ri-bar-wrap"><div class="ri-bar" style="width:100%"></div></div>
+            <span class="ri-pct">10%</span>
+          </div>
+          <div class="rubric-item">
+            <span class="ri-name">Learning — what did you discover along the way?</span>
+            <div class="ri-bar-wrap"><div class="ri-bar" style="width:100%"></div></div>
+            <span class="ri-pct">10%</span>
+          </div>
+          <div class="rubric-item">
+            <span class="ri-name">Teamwork — how did your team collaborate?</span>
+            <div class="ri-bar-wrap"><div class="ri-bar" style="width:50%"></div></div>
+            <span class="ri-pct">5%</span>
+          </div>
+          <div class="rubric-item">
+            <span class="ri-name">Future Thinking — where could this go next?</span>
+            <div class="ri-bar-wrap"><div class="ri-bar" style="width:50%"></div></div>
+            <span class="ri-pct">5%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PITCH BUILDER -->
+  <div id="builder"></div>
+  <div class="section">
+    <span class="section-label">Pitch Builder</span>
+    <h2>Build your pitch script.</h2>
+    <p class="subtitle">Fill in your project details and get a ready-to-practice pitch template.</p>
+
+    <div class="builder-card">
+      <div class="builder-header">
+        <div>
+          <h3>Your YIC 2026 Pitch Generator</h3>
+          <p>Fill in the blanks — we'll build the script structure for you</p>
+        </div>
+      </div>
+      <div class="builder-body">
+        <div class="tip-grid">
+          <div class="field-group">
+            <label>Community area <span>— Environment / Welfare / Arts & Culture / Health</span></label>
+            <input type="text" id="f-area" placeholder="e.g. Environment" />
+          </div>
+          <div class="field-group">
+            <label>The cause you're solving <span>— specific problem</span></label>
+            <input type="text" id="f-cause" placeholder="e.g. sun bear crop raids" />
+          </div>
+        </div>
+        <div class="tip-grid">
+          <div class="field-group">
+            <label>Who is affected <span>— your target community</span></label>
+            <input type="text" id="f-who" placeholder="e.g. rural farmers in Sabah" />
+          </div>
+          <div class="field-group">
+            <label>How many people / how often <span>— a real number</span></label>
+            <input type="text" id="f-scale" placeholder="e.g. 12 farmers, 3× per month" />
+          </div>
+        </div>
+        <div class="tip-grid">
+          <div class="field-group">
+            <label>Your data source <span>— how you collected it</span></label>
+            <input type="text" id="f-data" placeholder="e.g. 320 camera trap images over 3 weeks" />
+          </div>
+          <div class="field-group">
+            <label>Your AI platform & hardware <span>— tools used</span></label>
+            <input type="text" id="f-tech" placeholder="e.g. Teachable Machine + ESP32" />
+          </div>
+        </div>
+        <div class="field-group">
+          <label>What your solution does <span>— one sentence description</span></label>
+          <input type="text" id="f-solution" placeholder="e.g. detects sun bear heat signatures and sends LoRa alerts within 2 seconds" />
+        </div>
+        <div class="tip-grid">
+          <div class="field-group">
+            <label>One thing that failed <span>— and what you learned</span></label>
+            <input type="text" id="f-fail" placeholder="e.g. first model had 52% accuracy; we diversified our dataset" />
+          </div>
+          <div class="field-group">
+            <label>Team roles <span>— name + role for each of 3 members</span></label>
+            <input type="text" id="f-team" placeholder="e.g. Aina (ML), Haziq (hardware), Ilham (community)" />
+          </div>
+        </div>
+        <button class="generate-btn" onclick="generatePitch()">Generate my pitch script →</button>
+        <div class="output-area" id="pitchOutput"></div>
+        <button class="copy-btn" id="copyBtn" style="display:none" onclick="copyPitch()">📋 Copy pitch script</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div id="checklist"></div>
+  <div class="section">
+    <span class="section-label">Final Checklist</span>
+    <h2>Before you step on stage.</h2>
+    <p class="subtitle">Check every box. Your pitch score tracker updates as you go.</p>
+
+    <div class="score-bar-wrap">
+      <div class="score-header">
+        <span class="score-label">Pitch readiness</span>
+        <span class="score-num" id="scoreNum">0 / 15 checked</span>
+      </div>
+      <div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
+      <div class="score-msg" id="scoreMsg">Start checking items to track your readiness.</div>
+    </div>
+
+    <div class="checklist-grid">
+      <div class="check-group">
+        <div class="check-group-title ps">Problem Solving — 40%</div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I can name exactly who is affected and describe their suffering in under 30 seconds.</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I have at least one real number (people, frequency, cost) to describe the problem scale.</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I can explain what specific gap my solution fills that existing solutions don't.</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I know how many data samples I collected and where they came from.</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I can explain my data cleaning and labelling process in plain language.</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I can describe a real way this solution improves life for the community.</label>
+        </div>
+      </div>
+
+      <div class="check-group">
+        <div class="check-group-title tech">Technical — 30%</div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I can name the exact hardware/software my Edge AI runs on (ESP32, Raspberry Pi, Android, etc.).</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>My prototype works and I can demo it live (or show a video if hardware isn't here).</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I can explain why my approach is innovative — what hasn't been done this way before.</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I can describe how this could be scaled or replicated in other communities.</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>My code is clean, commented, and I can explain any part of it if asked.</label>
+        </div>
+      </div>
+
+      <div class="check-group">
+        <div class="check-group-title ref">Reflection — 30%</div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I have practised my full pitch out loud at least 3 times and timed it.</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I can share one genuine failure and what I learned from it.</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I can mention all 3 team members by name and explain their specific role.</label>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <input type="checkbox">
+          <label>I have a clear answer for "what would you do next if you had more time?"</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRESENTATION TIPS -->
+  <div class="section" style="padding-top: 0;">
+    <span class="section-label">Delivery Tips</span>
+    <h2>On the day.</h2>
+    <p class="subtitle">The content wins points. The delivery wins hearts.</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-card-icon">👁</div>
+        <h4>Eye contact beats slides</h4>
+        <p>Talk to the judges, not your slides. If you're reading off the screen, you've lost them. Know your content well enough to glance, not stare.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">🎭</div>
+        <h4>Split roles for impact</h4>
+        <p>Assign speaking sections to different team members. One person for the problem, one for the tech demo, one for reflection. Judges love seeing all three voices.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">⏱</div>
+        <h4>Rehearse with a timer</h4>
+        <p>Time your pitch until it fits. Going overtime signals poor preparation. Under-running signals shallow content. Hit 4–5 minutes consistently.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">❓</div>
+        <h4>Prepare for Q&A</h4>
+        <p>Judges will ask hard questions. Practise "I don't know, but here's how I'd find out" — it's more impressive than making up an answer.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">📱</div>
+        <h4>Demo early, demo live</h4>
+        <p>Show your prototype working as early as possible. Even a 20-second live demo changes the energy in the room completely.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">💚</div>
+        <h4>Own your passion</h4>
+        <p>Judges can tell when a team genuinely cares about their cause. Speak about your community partner, your research interviews, your real users — that energy is contagious and memorable.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>Built for YIC 2026 participants. Competition details at <a href="https://younginnovators.my" target="_blank">younginnovators.my</a></p>
+  <p style="margin-top:6px;">Theme: AI for Social Good · Teams of 3 · Open to secondary school students across Malaysia</p>
+</footer>
+
+<script>
+function scrollTo(id) {
+  document.querySelector(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function switchStep(idx) {
+  document.querySelectorAll('.step-tab').forEach((t, i) => {
+    t.classList.toggle('active', i === idx);
+  });
+  document.querySelectorAll('.step-panel').forEach((p, i) => {
+    p.classList.toggle('active', i === idx);
+  });
+  document.querySelectorAll('.pdot').forEach((d, i) => {
+    d.classList.toggle('active', i === idx);
+  });
+}
+
+document.querySelectorAll('.pdot').forEach((d, i) => {
+  d.addEventListener('click', () => switchStep(i));
+});
+
+function toggleCheck(el) {
+  const cb = el.querySelector('input[type=checkbox]');
+  cb.checked = !cb.checked;
+  el.classList.toggle('checked', cb.checked);
+  updateScore();
+}
+
+function updateScore() {
+  const total = document.querySelectorAll('.check-item input').length;
+  const checked = document.querySelectorAll('.check-item input:checked').length;
+  const pct = Math.round((checked / total) * 100);
+  document.getElementById('scoreNum').textContent = checked + ' / ' + total + ' checked';
+  document.getElementById('scoreFill').style.width = pct + '%';
+  const msgs = [
+    'Start checking items to track your readiness.',
+    'Good start — keep going!',
+    'You\'re building confidence.',
+    'Halfway there — solid progress.',
+    'Almost pitch-ready!',
+    'You\'re ready. Go get \'em! 🚀'
+  ];
+  const msgIdx = Math.floor(pct / 20);
+  document.getElementById('scoreMsg').textContent = msgs[Math.min(msgIdx, msgs.length - 1)];
+  if (pct === 100) {
+    document.getElementById('scoreFill').style.background = '#16a34a';
+  }
+}
+
+function generatePitch() {
+  const area = document.getElementById('f-area').value.trim() || '[your community area]';
+  const cause = document.getElementById('f-cause').value.trim() || '[your cause]';
+  const who = document.getElementById('f-who').value.trim() || '[your community]';
+  const scale = document.getElementById('f-scale').value.trim() || '[scale of problem]';
+  const data = document.getElementById('f-data').value.trim() || '[your data collection]';
+  const tech = document.getElementById('f-tech').value.trim() || '[your AI platform + hardware]';
+  const solution = document.getElementById('f-solution').value.trim() || '[what your solution does]';
+  const fail = document.getElementById('f-fail').value.trim() || '[a failure and what you learned]';
+  const team = document.getElementById('f-team').value.trim() || '[team member names and roles]';
+
+  const script = `🎯 HOOK (30 sec)
+"Imagine you're ${who}. ${cause} happens ${scale}. You have no warning, no system, and no affordable way to stop it. That's the problem we set out to fix."
+
+🔍 PROBLEM (45 sec)
+"In the ${area} space, ${cause} affects ${who}. We found that ${scale} face this challenge. The gap: [describe what currently doesn't work]. This is why we built our solution."
+
+📊 DATA STORY (75 sec)
+"We collected ${data}. We cleaned and labelled our dataset, then used ${tech} to train our model. Our accuracy reached [X%]. This data proved that [key insight from your research]."
+
+🤖 AI SOLUTION (80 sec)
+"Our solution ${solution}. It runs Edge AI using ${tech} — meaning it works offline, in real conditions, with no internet dependency. Here's a live demo: [DEMO]. Judges can see that [describe what the demo shows]."
+
+✨ REFLECT & FUTURE (65 sec)
+"We didn't get here without challenges. ${fail}. Our team: ${team} — each of us owned a clear role and pushed each other forward. Looking ahead, we'd [describe future improvements]. If this scales, ${who} across Malaysia could benefit — because AI for social good isn't just a competition theme, it's exactly what we built."`;
+
+  const out = document.getElementById('pitchOutput');
+  out.textContent = script;
+  out.classList.add('visible');
+  document.getElementById('copyBtn').style.display = 'flex';
+}
+
+function copyPitch() {
+  const text = document.getElementById('pitchOutput').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => { btn.innerHTML = '📋 Copy pitch script'; }, 2000);
+  });
+}
+</script>
+</body>
+</html>
